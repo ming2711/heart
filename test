@@ -1,0 +1,498 @@
+/** 
+    //Set timeout: chạy 1 code sau 1 tgian cho trc
+setTimeout(function(){
+    alert('123')
+}, 1000)
+
+    //Set Interval: chạy 1 code mỗi 1tgian cho trc
+setInterval(function(){
+    alert('123' + Math.radom)
+}, 1000)
+
+------------------------------------------------------------
+    //Number
+var a = 2;
+var b = 7;
+
+    //String
+var fullName = 'Thanh Minh';
+
+    //Boolean 
+var isSuccess = true;
+
+    //Undefined
+var age;
+
+    //Null
+var isNull = null;
+
+    //Symbol
+var id = Symbol('id');
+var id2 = Symbol('id2');
+
+//Function
+var myFunction = function(){
+    alert('Xin chao!!');
+};
+
+    //Object
+var myObject = {
+    name: 'Thanh Minh',
+    age: 18,
+    adress: 'Ha Noi', 
+    myFunction: function () {
+
+    }
+};
+
+var myArray = [
+    'Java',
+    'C++',
+    'PHP',
+];
+--------------------------------------------------------------------
+//1. length
+    var mySring = 'Dong Thanh Minh Dong ';
+    console.log(mySring.length);
+
+//2. Find index
+    console.log(mySring.indexOf('ng'));
+    console.log(mySring.lastIndexOf('ng'));
+    console.log(mySring.search('ng'));
+
+//3.Cut string: 
+    console.log(mySring.slice(5, 10));
+    console.log(mySring.slice(-10, -1));
+
+//4. Replace: ghi đè, thay thế
+    console.log(mySring.replace('Dong', 'Nguyen'));
+    console.log(mySring.replace(/Dong/g, 'Nguyen'));
+
+//5 + 6 Convert to upper(lower) case: viết hoa(thường) tất cả các chữ
+    console.log(mySring.toUpperCase());
+    console.log(mySring.toLowerCase());
+
+//7. Trim: bỏ dấu cách thừa ở đầu và cuối
+    console.log(mySring.trim());
+
+//8. Split: cắt 1 chuỗi thành 1 array
+     var languages = 'Java, PHP, C++, Ruby';
+     console.log(languages.split(', '));
+     var a = 'Javascript';
+     console.log(a.split(''));
+
+//9. Get the character by index: lấy 1 kí tự từ index
+    console.log(mySring.charAt(5));
+
+//10. To string: đổi từ number sang kiểu chữ (chữ màu đen là dạng string)
+    var age = 18;
+    var a = 2711.20003;
+    console.log(age.toString());
+    console.log(age);
+
+//11. To Fixed: làm tròn số
+    console.log(a.toFixed());
+    console.log(a.toFixed(2));
+
+    var languages = [
+        'Javascript',
+        'Ruby',
+        'C++',
+        'PHP',
+    ];
+    console.log(Array.isArray(languages));
+    console.log(languages[2]);
+    console.log(languages.length)
+
+
+    var languages = [
+        'Javascript',
+        'Ruby',
+        'C++',
+    ];
+
+--------------------------------------------------------------------
+//1. To string: 
+    console.log(languages.toString());
+
+//2.Join: đổi từ array sang chuỗi
+    console.log(languages.join(', '));
+
+//3. Pop: xóa phần tử ở cuối và trả phần tử đó
+    console.log(languages.pop());
+
+//4. Push: Thêm phần tử vào cuối mảng
+   console.log(languages.push('Dart', 'Java'));
+   console.log(languages);
+
+//5. Shift: xóa phần tử ở đầu mảng và trả phần tử đó
+    console.log(languages.shift());
+
+//6. Unshift: thêm phần tử vào đầu mảng
+    console.log(languages.unshift('Dart', 'C'));
+
+//7. Splice: xóa phần tử từ ... đến ... và chèn thêm phần tử
+    languages.splice(1, 3, 'Dart');
+    
+//8.Concat: nối array
+    var a = [
+        'Thanh',
+        'Minh',
+    ];
+    console.log(languages. concat(a));
+
+//9. Slice: cắt phần tử     
+    console.log(languages.slice(1, 2));
+    console.log(languages.slice(-2, -1));
+ ---------------------------------------------------------------------
+
+//Tạo hàm đầu tiên:
+    function minh(){
+        alert('Happy birth day!')
+    }
+    minh();
+------------------------------------------------------------------  
+//Giới thiệu vòng for of:
+    function writeLog(){
+        console.log()
+        var mySring = '';
+        for( var param of arguments){
+            mySring += `${param} - `
+        }
+        console.log(mySring)
+    }
+    writeLog('minh', 'a', 'b', 'c', 'd')
+
+-------------------------------------------------------------------
+//Return trong hàm:
+    function cong(a, b){
+        return a + b;
+    };
+    var result = cong(27, 11);
+    console.log(result);
+
+-------------------------------------------------------------------
+
+        //Các loại function     
+
+//1. Declaration
+    function showMessage(){
+    };
+//2. Expression 
+    var showMessage2 = function(){
+    };
+
+    setTimeout(function autologin(){
+    });
+
+    var myObject = {
+        myFunction: function(){
+        }
+    };
+
+-----------------------------------------------------------------
+
+//Object trong Javascript
+    var myInfo = {
+        name: 'Thanh Minh',
+        age: 18,
+        address: 'Dong Anh, Ha Noi',
+        getName: function(){
+            return this.age;
+        }
+    };
+    var a = 'address'
+    myInfo.email = 'minh2711200@gmail.com'; // chèn key vào object
+    console.log(myInfo.age)                 //Lấy key c1
+    console.log(myInfo[a])                  //Lấy key c2
+    delete myInfo.address;                  //Xóa key
+//Function : Phương thức(method)
+//Others : Thuộc tính(Property)
+
+----------------------------------------------------------------
+
+//Objecct constuctor
+
+    function User(fistName, lastName, avatar){
+        this.fistName = fistName;
+        this.lastName = lastName;
+        this.avatar = avatar;
+        this.getname = function(){
+            return `${this.fistName} ${this.lastName}`
+        }
+    }
+    var author = new User('Thanh', 'Minh', 'Avatar');
+    var user = new User('Vũ', 'Nguyễn', 'Avatar');
+
+    author.title = 'Toi la Minh';
+    user.comment = 'Xin chao ban';
+
+    console.log(author.getname());
+    console.log(user.getname());
+    console.log(author);
+    console.log(user);
+
+-----------------------------------------------------------
+
+Math.PI : số PI
+Math. round(x.y): làm tròn số x.y
+Math.abs(): tính giá trị tuyệt đối 
+Math.ceil(): làm tròn trên
+Math.floor(): làm tròn dưới
+Math.random(): lấy số ngẫu nhiên
+// Math.floor(Math.random() * n): lấy ngẫu nhiên 1 số từ 1 - n
+Math.min(): đưa ra số bé nhất 
+Math.max(): đưa ra số lớn nhất
+
+------------------------------------------------------------------
+VÒNG LẶP - LOOP
+
+1. for - Lặp với điều kiện đúng
+2. for/in - Lặp qua key của đối tượng
+3. for/of - Lặp qua value của đối tượng
+4. while - Lặp khi điều kiện đúng
+5. do/while - Lặp ít nhất 1 lần, sau đó lặp khi điều kiện đúng
+
+------------------------------------------------------------------
+
+
+var myarr = [
+    {
+        name: 'minh',
+        age: 18,
+        coin: 100,
+    },
+    {
+        name: 'duc',
+        age: 18,
+        coin: 200,
+    },
+    {
+        name: 'trung',
+        age: 1,
+        coin: 150,
+    },
+    {
+        name: 'tung',
+        age: 20,
+        coin: 400,
+    }
+];
+
+//ForEach()
+    myarr.forEach(function(arr, index){
+        console.log(index, arr)
+    });
+
+//Every()
+    var free = myarr.every(function(arr, index){
+        return arr.coin === 0;
+    });
+    console.log(free)
+
+//Some()
+    var isfree = myarr.some(function(arr, index){
+        return arr.coin === 0;
+    });
+    console.log(isfree)
+
+//Find()
+    var a = myarr.find(function(arr, index){
+        return arr.age === 18;
+    });
+    console.log(a)
+
+//Filter()    
+    var a = myarr.filter(function(arr, index){
+        return arr.age === 18;
+    });
+    console.log(a)
+
+//Map()
+    function test(arr){
+        return {
+            name: `Ten ${arr.name}`,
+            age: arr.age,
+            coin: arr.coin,
+            address: 'Dong Anh',
+        };
+    };
+
+    var newArray = myarr.map(test);
+
+    console.log(newArray)
+
+//Reduce()
+
+    function a(giaTriTichTru, giaTriHienTai){
+        return giaTriTichTru + giaTriHienTai.coin
+    }
+    var tong = myarr.reduce(a, 0)
+    console.log(tong);
+
+
+-----------------------------------------------------------------------
+
+
+//Map2
+    var courses = ['toán', 'anh', 'văn'];
+
+    Array.prototype.map2 = function(callback){
+        var arrLength = this.length
+        var output = [];
+        for (var i = 0; i < arrLength; i++) {
+            var kq = callback(this[i], i);
+            output.push(kq);
+        }
+        return output;
+    }
+
+    var htmls = courses.map2(function(course){
+        return `<h2>${course}</h2>`;
+    })
+
+    console.log(htmls.join(', '))
+
+//ForEach2
+    Array.prototype.forEach2 = function(cb){
+        for (var index in this){
+            if(this.hasOwnProperty(index)){
+                cb(this[index], index, this)
+            }
+        }
+    }
+
+//Every2
+    Array.prototype.every2 = function (callback) {
+    for (var i = 0; i < this.length; i++) {
+        if (!callback(this[i], i)) {
+        return false;
+        }
+    }
+    return true;
+    };
+
+//Some2
+    Array.prototype.some2 = function(cb){
+        for(var index in this){
+            if(this.hasOwnProperty(index)){
+                if(cb(this[index], index, this)){
+                    return true;
+                };
+            }
+        }
+        return false;
+    };
+
+//Find2
+    Array.prototype.find2 = function (callback) {
+    for (var i = 1; i < this.length; i++) {
+        if (callback(this[i], i)) {
+        return this[i];
+        }
+    }
+    return undefined;
+    };
+
+
+//Filter2
+    Array.prototype.filter2 = function(cb){
+        var output = [];
+        for( var index in this){
+            if(this.hasOwnProperty(index)){
+                var result = cb(this[index], index, this)
+                if(result){
+                    output.push(this[index])
+                }
+            }
+        }
+        return output;
+    }
+
+
+
+//Reduce2
+    Array.prototype.reduce2 = function (callback, initialValue) {
+    let i = 0;
+    if (arguments.length < 2) {
+        i = 1;
+        initialValue = this[0];
+    }
+    for (i; i < this.length; i++) {
+        initialValue = callback(initialValue, this[i], i, this);
+    }
+    return initialValue;
+    };
+
+---------------------------------------------------------------------------------
+//Id
+    var headingNode = document.getElementById('heading')
+
+//Class
+    var headingNodes = document.getElementCalss('heading')
+
+//Tag
+    var headingNodes = document.getElementsByTagName('h1')
+
+//CSS seclector
+    var headingNode = document.querySeclector('.heading')
+    var headingNode = document.querySeclector('.box.minh:first-child')
+    var headingNode = document.querySeclector('.box.minh:nth-child(2)')
+    var headingNodes = document.querySeclectorAll('.box.minh')
+    console.log(headingNodes[3])
+
+//HTML collection
+    console.log(document.forms.testForm)
+    console.log(document.forms['form-2'])
+    console.log(document.forms[1])
+
+
+-------------------------------------------------------------------------------------
+
+
+//Thêm Attribute vào Element
+    var boxNode = document.querySelector('h1')
+    C1: boxNode.id = 'heading' 
+    C2: boxNode.setAttribute('data', 'heading')
+
+//Lấy value từ Attribute
+    console.log(box.getAttribute('id'))
+
+---------------------------------------------------------------------------------
+
+
+//Thêm class
+    a.classList.add('red')
+//Kiểm tra xem có class hay không
+    a.classList.contains('red')
+//Xóa class
+    a.classList.remove('red')
+
+//Kiểm tra xem có class hay không, nếu có thì xóa không thì thêm
+    a.classList.toggle('red')
+
+//Xóa class này thêm class kia
+    a.classList.replace('red', 'blue')
+
+
+----------------------------------------------------------------------------------------
+
+
+//JSON
+ - Là 1 định dạng dữ liệu (chuỗi)
+ - Viết tắt của: JavaScript Object Notation
+ - JSON: Number, String, Boolean, Null, Array, Object
+ - Mã hóa / giải mã
+ - Encode / Decode
+ - Stringify: từ Javascript type -> JSON 
+ - Parse: từ JSOn -> Javascript type
+
+
+//Promise
+- Đồng bộ (Sync)
+- Bất đồng bộ (Async)
+
+*/
+
+
+
